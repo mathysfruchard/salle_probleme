@@ -3,10 +3,6 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<center>
-    {% include 'partial/_header.html.twig' %}
-</center>
-    
 
     <div class="button-container">
         <a href="{{ path('app_signalement_new') }}" class="btn btn-danger btn-custom-large text-white" aria-label="Signaler un incident">Signaler un incident</a>
@@ -18,9 +14,4 @@
         {% block main_content %}{% endblock %}
     </div>
 
-	{% block javascripts %}
-		{% block importmap %}
-			{{ importmap('app') }}
-		{% endblock %}
-	{% endblock %}
 {% endblock %}
