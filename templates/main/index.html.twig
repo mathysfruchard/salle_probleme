@@ -4,8 +4,6 @@
 
 {% block body %}
 
-    
-
     <div class="button-container">
         <a href="{{ path('app_signalement_new') }}" class="btn btn-danger btn-custom-large text-white" aria-label="Signaler un incident">Signaler un incident</a>
         <a href="{{ path('app_signalement_index') }}" type="button" class="btn btn-primary btn-custom-large text-white" aria-label="Historique des incidents">Historique des incidents</a>
@@ -16,9 +14,4 @@
         {% block main_content %}{% endblock %}
     </div>
 
-	{% block javascripts %}
-		{% block importmap %}
-			{{ importmap('app') }}
-		{% endblock %}
-	{% endblock %}
 {% endblock %}

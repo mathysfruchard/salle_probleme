@@ -16,21 +16,24 @@ class SignalementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('description')
-            ->add('date_signalement', null, [
-                'widget' => 'single_text',
-            ])
             ->add('user', EntityType::class, [
                 'class' => user::class,
-                'choice_label' => 'id',
-            ])
-            ->add('materiel', EntityType::class, [
-                'class' => materiels::class,
-                'choice_label' => 'id',
+                'placeholder' => 'Sélectionnez votre statut',
+                'choice_label' => 'statut',
             ])
             ->add('salles', EntityType::class, [
                 'class' => salles::class,
-                'choice_label' => 'id',
+                'placeholder' => 'Sélectionnez la salle',
+                'choice_label' => 'nom',
+            ])
+            ->add('materiel', EntityType::class, [
+                'class' => materiels::class,
+                'placeholder' => 'Sélectionnez le materiel concérné',
+                'choice_label' => 'nom',
+            ])
+            ->add('description')
+            ->add('date_signalement', null, [
+                'widget' => 'single_text',
             ])
         ;
     }
