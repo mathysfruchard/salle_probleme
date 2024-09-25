@@ -4,9 +4,9 @@
  
 {% block body %}
     <div class="container">
- 
+
         <h1>Historique de signalement</h1>
- 
+
         <table class="table table-bordered table-striped">
             <thead class="bg-dark text-white">
                 <tr>
@@ -25,7 +25,7 @@
                     <td><!--affichage de la date de naissance de la vache-->
                         <span class="btn-primary">
                             <a href="{{ path('app_signalement_show', {'id': signalement.id}) }}">show</a>
-   
+    
                         </span>
                         <span class="btn-primary">
                             <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">edit</a>
@@ -41,8 +41,8 @@
         </table>
     </div>
         <span class="custom-btn">
- 
+
         <a href="{{ path('app_signalement_new') }}">Nouveau signalement</a>
         </span>
-       
+        
 {% endblock %}
