@@ -1,44 +1,48 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Signalement index{% endblock %}
-
-{% block body %}
-    <h1>Historique de signalement</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>Date de signalement</th>
-                <th>actions</th>
-            </tr><!--création des colonnes-->
-        </thead>
-        <tbody>
-        {% for signalement in signalements %}
-            <tr>
-                <td>{{ signalement.id }}</td>
-                <td>{{ signalement.description }}</td>
-                <td>{{ signalement.dateSignalement ? signalement.dateSignalement|date('Y-m-d H:i:s') : '' }}</td>
-                <td><!--affichage de la date de naissance de la vache-->
-                    <span class="btn-primary">
-                        <a href="{{ path('app_signalement_show', {'id': signalement.id}) }}">show</a>
  
-                    </span>
-                    <span class="btn-primary">
-                        <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">edit</a>
-                    </span>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">Aucun signalement existantes</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <span class="custom-btn">
-
-    <a href="{{ path('app_signalement_new') }}">Nouveau signalement</a>
-    </span>
+{% block title %}Signalement index{% endblock %}
+ 
+{% block body %}
+    <div class="container">
+ 
+        <h1>Historique de signalement</h1>
+ 
+        <table class="table table-bordered table-striped">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date de signalement</th>
+                    <th class="text-center" scope="col">actions</th>
+                </tr><!--création des colonnes-->
+            </thead>
+            <tbody>
+            {% for signalement in signalements %}
+                <tr>
+                    <th scope="row">{{ signalement.id }}</th>
+                    <td>{{ signalement.description }}</td>
+                    <td classe="text-center">{{ signalement.dateSignalement ? signalement.dateSignalement|date('Y-m-d H:i:s') : '' }}</td>
+                    <td><!--affichage de la date de naissance de la vache-->
+                        <span class="btn-primary">
+                            <a href="{{ path('app_signalement_show', {'id': signalement.id}) }}">show</a>
+   
+                        </span>
+                        <span class="btn-primary">
+                            <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">edit</a>
+                        </span>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun signalement existantes</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <span class="custom-btn">
+ 
+        <a href="{{ path('app_signalement_new') }}">Nouveau signalement</a>
+        </span>
+       
 {% endblock %}
