@@ -3,16 +3,16 @@
 {% block title %}Signalement index{% endblock %}
 
 {% block body %}
-    <h1>Signalement index</h1>
+    <h1>Historique de signalement</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Description</th>
-                <th>Date_signalement</th>
+                <th>Date de signalement</th>
                 <th>actions</th>
-            </tr>
+            </tr><!--création des colonnes-->
         </thead>
         <tbody>
         {% for signalement in signalements %}
@@ -20,18 +20,25 @@
                 <td>{{ signalement.id }}</td>
                 <td>{{ signalement.description }}</td>
                 <td>{{ signalement.dateSignalement ? signalement.dateSignalement|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_signalement_show', {'id': signalement.id}) }}">show</a>
-                    <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">edit</a>
+                <td><!--affichage de la date de naissance de la vache-->
+                    <span class="btn-primary">
+                        <a href="{{ path('app_signalement_show', {'id': signalement.id}) }}">show</a>
+ 
+                    </span>
+                    <span class="btn-primary">
+                        <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">edit</a>
+                    </span>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun signalement existantes</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    <span class="custom-btn">
 
-    <a href="{{ path('app_signalement_new') }}">Create new</a>
+    <a href="{{ path('app_signalement_new') }}">Nouveau signalement</a>
+    </span>
 {% endblock %}
