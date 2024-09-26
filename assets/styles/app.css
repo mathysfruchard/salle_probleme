@@ -146,6 +146,10 @@ a {
     background-color: #dc3545;
 }
 
+.btn-warning {
+    background-color: #f8c600;
+}
+
 /* Alert styles */
 .alert {
     padding: 15px;
