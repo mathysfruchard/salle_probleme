@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Technicien</td>
+                    
                     <td>Date d'intervention</td>
                     <td>Commentaire</td>
                     <td>Actions</td>
@@ -22,7 +22,7 @@
             {% for intervention in interventions %}
                 <tr>
                     <td>{{ intervention.id }}</td>
-                    <td>{{ intervention.technicien }}</td>
+                    
                     <td>{{ intervention.dateIntervention ? intervention.dateIntervention|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ intervention.commentaire }}</td>
                     <td>

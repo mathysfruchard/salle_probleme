@@ -26,10 +26,10 @@
                     <td>{{ signalement.salles ? signalement.salles.nom : 'N/A' }}</td> <!-- Affiche le nom de la salle -->
                     <td>{{ signalement.materiel ? signalement.materiel.nom : 'N/A' }}</td> <!-- Affiche le nom du matériel -->
                     <td class="text-center">
-                        <span class="btn btn-primary">
+                        <span class="btn-primary">
                             <a class="text-white" href="{{ path('app_signalement_show', {'id': signalement.id}) }}">Gérer</a>
                         </span>
-                        <span class="btn btn-primary">
+                        <span class="btn-primary">
                             <a class="text-white" href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">Modifier</a>
                         </span>
                     </td>
