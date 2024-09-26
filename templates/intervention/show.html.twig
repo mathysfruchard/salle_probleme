@@ -15,6 +15,10 @@
                 <th>Date_intervention</th>
                 <td>{{ intervention.dateIntervention ? intervention.dateIntervention|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+                        <tr>
+                <th>Signalement fait par</th>
+                <td>{{ intervention.user ? intervention.user.statut : 'N/A' }}</td>
+            </tr>
             <tr>
                 <th>Commentaire</th>
                 <td>{{ intervention.commentaire }}</td>
