@@ -89,21 +89,21 @@ a {
     display: inline-block;
     padding: 8px 16px;
     border-radius: 4px;
-    background-color: #069206;
+    background-color: #153cca;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
 
 .custom-btn a:hover {
-    background-color: #073977;
+    background-color: #2b7fe5;
 }
 
 .btn-primary a {
     display: inline-block;
     padding: 3px 15px;
     border-radius: 4px;
-    background-color: #12c512;
+    background-color: #113dee;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -111,7 +111,7 @@ a {
 }
 
 .btn-primary a:hover {
-    background-color: #022968;
+    background-color: #03204e;
 }
 
 .btn-secondary {

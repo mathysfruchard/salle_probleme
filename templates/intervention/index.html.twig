@@ -8,8 +8,8 @@
 
         <h1>Liste des interventions</h1>
 
-        <table class="table table-dark table-striped">
-            <thead>
+       <table class="table table-bordered table-striped">
+            <thead class="bg-dark text-white">
                 <tr>
                     <td>Id</td>
                     
@@ -26,8 +26,12 @@
                     <td>{{ intervention.dateIntervention ? intervention.dateIntervention|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ intervention.commentaire }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Voir</a>
-                        <a class="btn btn-warning" href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">Modifier</a>
+                        <span class="btn-primary">
+                            <a class="text-white" href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Voir</a>
+                            </span>
+                        <span class="btn-primary">
+                            <a class="text-white" href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">Modifier</a>
+                            </span>
                     </td>
                 </tr>
             {% else %}
