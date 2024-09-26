@@ -1,48 +1,41 @@
 {% extends 'base.html.twig' %}
- 
-{% block title %}Signalement index{% endblock %}
- 
-{% block body %}
-    <div class="container">
 
-        <h1>Historique de signalement</h1>
+{% block title %}Signalements{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Historique de signalement</h1>
 
         <table class="table table-bordered table-striped">
             <thead class="bg-dark text-white">
                 <tr>
-                    <th scope="col">Id</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Date de signalement</th>
-                    <th class="text-center" scope="col">actions</th>
-                </tr><!--création des colonnes-->
+                    <th scope="col">Salle</th>
+                    <th scope="col">Matériel</th>
+                    <th class="text-center" scope="col">Actions</th>
+                </tr>
             </thead>
             <tbody>
             {% for signalement in signalements %}
                 <tr>
-                    <th scope="row">{{ signalement.id }}</th>
                     <td>{{ signalement.description }}</td>
-                    <td classe="text-center">{{ signalement.dateSignalement ? signalement.dateSignalement|date('Y-m-d H:i:s') : '' }}</td>
-                    <td><!--affichage de la date de naissance de la vache-->
+                    <td>{{ signalement.salles ? signalement.salles.nom : 'N/A' }}</td> <!-- Affiche le nom de la salle -->
+                    <td>{{ signalement.materiel ? signalement.materiel.nom : 'N/A' }}</td> <!-- Affiche le nom du matériel -->
+                    <td class="text-center">
                         <span class="btn-primary">
-                            <a href="{{ path('app_signalement_show', {'id': signalement.id}) }}">show</a>
-    
+                            <a class="text-white" href="{{ path('app_signalement_show', {'id': signalement.id}) }}">Détail</a>
                         </span>
-                        <span class="btn-primary">
-                            <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">edit</a>
-                        </span>
+                        {# <span class=btn-primary"> #}
+                            {# <a class="text-white" href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">Modifier</a> #}
+                        {# </span> #}
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="4">Aucun signalement existantes</td>
+                    <td colspan="7" class="text-center">Aucun signalement existant</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
-        <span class="custom-btn">
-
-        <a href="{{ path('app_signalement_new') }}">Nouveau signalement</a>
-        </span>
-        
 {% endblock %}

@@ -12,6 +12,10 @@
                 <td>{{ intervention.id }}</td>
             </tr>
             <tr>
+                <th>Technicien</th>
+                <td>{{ intervention.technicien }}</td>
+            </tr>
+            <tr>
                 <th>Date_intervention</th>
                 <td>{{ intervention.dateIntervention ? intervention.dateIntervention|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
