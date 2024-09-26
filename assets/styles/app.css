@@ -22,6 +22,14 @@ body {
     margin-top: 0px !important; /* Remettre à zéro la marge supérieure */
     padding-top: 20px; /* Ajouter un léger padding */
 }
+h1 {
+    color: #000; /* Couleur noire */
+    font-family: 'Arial Black', 'Gadget', sans-serif; /* Police de caractère personnalisée */
+    font-size: 3rem; /* Taille du texte */
+    font-weight: bold; /* Gras pour un meilleur effet visuel */
+    text-align: center; /* Centrer le titre, optionnel */
+    margin: 20px 0; /* Marges pour espacement */
+}
 
 
 

@@ -8,12 +8,8 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ intervention.id }}</td>
-            </tr>
-            <tr>
-                <th>Technicien</th>
-                <td>{{ intervention.technicien }}</td>
+                <th>Signalement</th>
+               <td>{{ intervention.signalement ? intervention.signalement.description : 'N/A' }}</td>
             </tr>
             <tr>
                 <th>Date_intervention</th>
@@ -26,9 +22,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_intervention_index') }}">back to list</a>
 
-    <a href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">edit</a>
 
-    {{ include('intervention/_delete_form.html.twig') }}
+
+
 {% endblock %}

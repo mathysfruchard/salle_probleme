@@ -12,6 +12,12 @@
                     <th>Description</th>
                     <td>{{ signalement.description }}</td>
                 </tr>
+                <th>Salle</th>
+                  <td>{{ signalement.salles ? signalement.salles.nom : 'N/A' }}</td> <!-- Affiche le nom de la salle -->
+                  </tr>
+                  <tr>
+                <th>Matériel endommagé</th>
+                    <td>{{ signalement.materiel ? signalement.materiel.nom : 'N/A' }}</td> <!-- Affiche le nom du matériel -->
                 <tr>
                     <th>Date de signalement</th>
                     <td>{{ signalement.dateSignalement ? signalement.dateSignalement|date('Y-m-d H:i:s') : '' }}</td>
@@ -25,7 +31,6 @@
 
         <div class="button-container mt-4">
             <a href="{{ path('app_signalement_index') }}" class="btn btn-primary">Retour à la liste</a>
-            <a href="{{ path('app_signalement_edit', {'id': signalement.id}) }}" class="btn btn-secondary">Modifier</a>
         </div>
     </div>
 {% endblock %}

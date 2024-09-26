@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Intervention{% endblock %}
+{% block title %}Modifier l'intervention{% endblock %}
 
 {% block body %}
-    <h1>Edit Intervention</h1>
+    <h1>Modifier l'intervention</h1>
 
-    {{ include('intervention/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('intervention/_form.html.twig', {'button_label': 'Enregistrer les modifications'}) }}
 
-    <a href="{{ path('app_intervention_index') }}">back to list</a>
+    <a button type class="btn btn-primary" href="{{ path('app_intervention_index') }}">back to list</a>
 
-    {{ include('intervention/_delete_form.html.twig') }}
 {% endblock %}

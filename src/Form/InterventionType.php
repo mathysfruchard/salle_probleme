@@ -21,11 +21,11 @@ class InterventionType extends AbstractType
             ->add('commentaire')
             ->add('user', EntityType::class, [
                 'class' => user::class,
-                'choice_label' => 'id',
+                'choice_label' => 'statut',
             ])
             ->add('signalement', EntityType::class, [
                 'class' => signalement::class,
-                'choice_label' => 'id',
+                'choice_label' => 'description',
             ])
         ;
     }

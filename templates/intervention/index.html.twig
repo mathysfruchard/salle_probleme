@@ -4,49 +4,33 @@
 
 {% block body %}
     <center>
-
-
         <h1>Liste des interventions</h1>
 
        <table class="table table-bordered table-striped">
             <thead class="bg-dark text-white">
                 <tr>
-                    <td>Id</td>
-                    
+                    <td>Signalement</td> <!-- Change 'Id' to 'Signalement' -->
                     <td>Date d'intervention</td>
-                    <td>Commentaire</td>
                     <td>Actions</td>
                 </tr>
             </thead>
             <tbody>
             {% for intervention in interventions %}
                 <tr>
-                    <td>{{ intervention.id }}</td>
-                    
+                    <!-- Replace 'intervention.id' with 'intervention.signalement.description' -->
+                    <td>{{ intervention.signalement ? intervention.signalement.description : 'N/A' }}</td>
                     <td>{{ intervention.dateIntervention ? intervention.dateIntervention|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>{{ intervention.commentaire }}</td>
-                    <td>
-                        <span class="btn-primary">
-                            <a class="text-white" href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Voir</a>
-                            </span>
-                        <span class="btn-primary">
-                            <a class="text-white" href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">Modifier</a>
-                            </span>
+                    <td class="text-center">
+                        <a class="btn btn-primary text-white" href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Détail</a>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="5">Aucune intervention trouvée</td>
+                    <td colspan="4">Aucune intervention trouvée</td> <!-- Adjust colspan to 4 -->
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-
-        <!-- Ajouter la classe mt-4 pour un espacement supplémentaire -->
-        <div class="mt-4">
-            <a class="btn btn-primary" href="{{ path('app_intervention_new') }}">Créer une nouvelle intervention</a>
-        </div>
-
     </center>
 
     <div class="col py-3">
