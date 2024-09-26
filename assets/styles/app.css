@@ -3,9 +3,18 @@
 
 
 body {
-    background-color: content-box radial-gradient (crimson, skyblue);
+    background: linear-gradient(to bottom, #a2d9ff, #76b2e2, #4e92c2, #357aa8, #2a4d57);
+    background-size: cover;
     font-family: 'Open Sans', sans-serif;
+    color: #ffffff; /* Couleur du texte pour une meilleure lisibilité */
+    min-height: 100vh; /* Assure que le fond couvre toute la hauteur de la page */
+    margin: 0; /* Supprime les marges par défaut */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 h3 {
     color: #000000;
