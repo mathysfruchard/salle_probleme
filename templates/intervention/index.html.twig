@@ -21,7 +21,7 @@
                     <td>{{ intervention.signalement ? intervention.signalement.description : 'N/A' }}</td>
                     <td>{{ intervention.dateIntervention ? intervention.dateIntervention|date('Y-m-d H:i:s') : '' }}</td>
                     <td class="text-center">
-                        <a class="btn btn-primary text-white" href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Détail</a>
+                        <a class="btn btn-primary text-white" href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Détails</a>
                     </td>
                 </tr>
             {% else %}
