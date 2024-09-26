@@ -28,6 +28,7 @@ class Signalement
 
     #[ORM\ManyToOne(inversedBy: 'signalements')]
     private ?salles $salles = null;
+    
 
     public function getId(): ?int
     {

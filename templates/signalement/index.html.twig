@@ -3,8 +3,10 @@
 {% block title %}Signalements{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Historique de signalement</h1>
+
+    <!-- Container pour l'historique des signalements -->
+    <div class="container mt-3"> <!-- Réduit la marge supérieure -->
+        <h1 class="text-center mb-3">Historique de signalement</h1> <!-- Réduire la marge inférieure -->
 
         <table class="table table-bordered table-striped">
             <thead class="bg-dark text-white">
@@ -22,17 +24,12 @@
                     <td>{{ signalement.salles ? signalement.salles.nom : 'N/A' }}</td> <!-- Affiche le nom de la salle -->
                     <td>{{ signalement.materiel ? signalement.materiel.nom : 'N/A' }}</td> <!-- Affiche le nom du matériel -->
                     <td class="text-center">
-                        <span class="btn-primary">
-                            <a class="text-white" href="{{ path('app_signalement_show', {'id': signalement.id}) }}">Détail</a>
-                        </span>
-                        {# <span class=btn-primary"> #}
-                            {# <a class="text-white" href="{{ path('app_signalement_edit', {'id': signalement.id}) }}">Modifier</a> #}
-                        {# </span> #}
+                        <a class="btn btn-primary text-white" href="{{ path('app_signalement_show', {'id': signalement.id}) }}">Détail</a>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="7" class="text-center">Aucun signalement existant</td>
+                    <td colspan="4" class="text-center">Aucun signalement existant</td>
                 </tr>
             {% endfor %}
             </tbody>
