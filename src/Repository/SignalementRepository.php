@@ -15,6 +15,14 @@ class SignalementRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Signalement::class);
     }
+    public function findSignalementsWithoutIntervention(): array
+    {
+        return $this->createQueryBuilder('s')
+            ->leftJoin('s.intervention', 'i')
+            ->where('i.id IS NULL')
+            ->getQuery()
+            ->getResult();
+    }
 
     //    /**
     //     * @return Signalement[] Returns an array of Signalement objects

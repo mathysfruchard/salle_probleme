@@ -28,6 +28,31 @@ class Signalement
 
     #[ORM\ManyToOne(inversedBy: 'signalements')]
     private ?salles $salles = null;
+    #[ORM\OneToOne(mappedBy: 'signalement', cascade: ['persist', 'remove'])]
+    private ?Intervention $intervention = null;
+
+    public function getIntervention(): ?Intervention
+    {
+        return $this->intervention;
+    }
+
+    public function setIntervention(?Intervention $intervention): self
+    {
+        // Unlink the previous intervention
+        if ($this->intervention && $this->intervention->getSignalement() !== $this) {
+            $this->intervention->setSignalement(null);
+        }
+
+        // Set the new intervention
+        $this->intervention = $intervention;
+
+        // Make sure the intervention references this signalement
+        if ($intervention && $intervention->getSignalement() !== $this) {
+            $intervention->setSignalement($this);
+        }
+
+        return $this;
+    }
     
 
     public function getId(): ?int
